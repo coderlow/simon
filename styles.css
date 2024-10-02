@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.color-box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 10px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#green {
+    background-color: green;
+}
+
+#red {
+    background-color: red;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#blue {
+    background-color: blue;
+}
+
+.color-box.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.color-box.success {
+    animation: success-flash 0.3s ease-out 3;
+}
+
+@keyframes success-flash {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+#message {
+    margin: 20px;
+    font-size: 1.5em;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1abc9c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #16a085;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    #game-container {
+        flex-direction: column;
+    }
+
+    .color-box {
+        width: 80px;
+        height: 80px;
+        margin: 5px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
